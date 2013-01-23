@@ -6,26 +6,28 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require datepicker
+//= require select2
 //= require_tree .
 
 $(function() {
 
   // CHANGE THIS TO REQUIRED LENGTH
   var SEARCH_CHARACTER_LIMIT = 30;
-  
+
   $.fn.limit = function(max_length) {
       var self = $(this);
-      
-      self.keydown(function(e) {      
+
+      self.keydown(function(e) {
       text = self.val();
       if (text.length >= max_length) {
         self.val(text.substr(0, max_length));
       }
     });
   };
-  
+
   $("#search .field").limit(SEARCH_CHARACTER_LIMIT);
-  
+
   $.fn.defaultValue = function(value) {
     var self = $(this);
     self.focus(function() {
@@ -39,7 +41,7 @@ $(function() {
       }
     });
   }
-  
+
   $(".challenges-search").defaultValue('search challenges');
   $(".members-search").defaultValue('search members');
 

@@ -2,6 +2,264 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+div.datepicker {
+  position: relative;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  width: 196px;
+  height: 147px;
+  position: absolute;
+  cursor: default;
+  top: 0;
+  left: 0;
+  display: none;
+}
+.datepickerContainer {
+  position: absolute;
+}
+
+/* Hide border divs by default */
+.datepickerBorderT,
+.datepickerBorderB,
+.datepickerBorderL,
+.datepickerBorderR,
+.datepickerBorderTL,
+.datepickerBorderTR,
+.datepickerBorderBL,
+.datepickerBorderBR {
+  display:none;
+}
+
+.datepickerHidden {
+  display: none;
+}
+div.datepicker table {
+  border-collapse:collapse;
+}
+div.datepicker a {
+  color: black;
+  text-decoration: none;
+  cursor: default;
+  outline: none;
+}
+div.datepicker table td {
+  text-align: center;
+  padding: 0;
+  margin: 0;
+}
+div.datepicker th {
+  text-align: center;
+  color: #666666;
+  font-weight: normal;
+  padding:0;
+}
+div.datepicker tbody a {
+  display: block;
+}
+.datepickerDays a {
+  width: 20px;
+  line-height: 16px;
+  height: 16px;
+  padding-right: 2px;
+}
+.datepickerYears a,
+.datepickerMonths a{
+  width: 39px;
+  line-height: 36px;
+  height: 36px;
+  text-align: center;
+}
+.datepickerMonths td:first-child a,
+.datepickerMonths td:last-child a,
+.datepickerYears td:first-child a,
+.datepickerYears td:last-child a {
+  width:38px;
+}
+td.datepickerNotInMonth a {
+  color: #666666;
+}
+tbody.datepickerDays td.datepickerSelected{
+  background: #136A9F;
+}
+tbody.datepickerDays td.datepickerNotInMonth.datepickerSelected {
+  background: #17384d;
+}
+tbody.datepickerYears td.datepickerSelected,
+tbody.datepickerMonths td.datepickerSelected{
+  background: #17384d;
+}
+div.datepicker td.datepickerSelected a {
+  color:white;
+}
+div.datepicker a:hover,
+div.datepicker a:hover {
+  color: #88c5eb;
+}
+div.datepicker td.datepickerNotInMonth a:hover {
+  color: #999999;
+}
+.datepickerSpace div {
+  width: 20px;
+}
+.datepickerBlock {
+  vertical-align:top;
+}
+a.datepickerGoNext,
+a.datepickerGoPrev,
+a.datepickerMonth {
+  text-align: center;
+  height: 20px;
+  line-height: 20px;
+  float:left;
+}
+div.datepicker th a.datepickerGoNext,
+div.datepicker th a.datepickerGoPrev {
+  width: 20px;
+  color: #666666;
+  display:none;
+}
+div.datepicker th a.datepickerMonth {
+  width:114px;
+  display:block;
+}
+/* Only display the previous/next arrows on the first/last calendars */
+div.datepicker .datepickerFirstView th a.datepickerGoPrev,
+div.datepicker .datepickerLastView th a.datepickerGoNext {
+  display:block;
+}
+/* Compensate for the space lost by not having a previous arrow */
+div.datepicker th a.datepickerMonth {
+  margin-left:20px;
+}
+div.datepicker .datepickerFirstView th a.datepickerMonth {
+  margin-left:0;
+}
+/* Day mode calendar body */
+table.datepickerViewDays tbody.datepickerMonths,
+table.datepickerViewDays tbody.datepickerYears {
+  display: none;
+}
+/* Month mode calendar body */
+table.datepickerViewMonths tbody.datepickerDays,
+table.datepickerViewMonths tbody.datepickerYears,
+table.datepickerViewMonths tr.datepickerDoW {
+  display: none;
+}
+/* Year mode calendar body */
+table.datepickerViewYears tbody.datepickerDays,
+table.datepickerViewYears tbody.datepickerMonths,
+table.datepickerViewYears tr.datepickerDoW {
+  display: none;
+}
+td.datepickerDisabled a,
+td.datepickerDisabled.datepickerNotInMonth a{
+  color: #555555;
+}
+td.datepickerDisabled a:hover {
+  color: #333333;
+}
+/* Not used by default, calendar cells can be marked as special if desired (doesn't seem to be totally working) */
+div.datepicker tbody.datepickerDays td.datepickerSpecial a {
+  background: #770000;
+  color:white;
+}
+div.datepicker tbody.datepickerDays td.datepickerSpecial.datepickerSelected a {
+  background: #aa0000;
+}
+
+/* style the 'not in month' day cell away */
+tbody.datepickerDays td.datepickerNotInMonth.datepickerSelected {
+  background-color:transparent;
+}
+div.datepicker td.datepickerNotInMonth a span {
+  display:none;
+}
+div.datepicker td.datepickerNotInMonth a:hover span {
+  display:none;
+}
+div.datepicker tbody.datepickerDays td.datepickerNotInMonth:hover {
+  background-color: transparent;
+}
+
+/* Datepicker border styling */
+.datepicker {
+  background-color: #F7F7F7;
+  border: 1px solid #CCCCCC;
+  border-radius: 5px 5px 5px 5px;
+  padding: 10px;
+}
+
+/* Tighten up the spacing between multiple calendars */
+.datepickerSpace div {
+  width:2px;
+}
+
+/* Grey background behind Month Name row, and blue text */
+div.datepicker th {
+  background-color:#DDDDDD;
+}
+div.datepicker th a.datepickerMonth {
+  color:#008ED6;
+  font-weight:normal;
+}
+
+/* style the day of week header cells */
+div.datepicker th {
+  color: black;
+  font-weight: bold;
+}
+/* grey underline beneath day of week row */
+div.datepicker table thead tr.datepickerDoW th {
+  border-bottom: 1px solid #CCCCCC;
+}
+
+/* Black text, white background, and grey borders around day cells */
+div.datepicker a,
+div.datepicker a:hover {
+  color: black;
+}
+div.datepicker table.datepickerViewDays,
+div.datepicker table.datepickerViewMonths,
+div.datepicker table.datepickerViewYears {
+  background-color:white;
+}
+div.datepicker table tbody.datepickerDays td {
+  border: 1px solid #F7F7F7;
+}
+
+/* blue cell color for selected days */
+tbody.datepickerDays td.datepickerSelected {
+  background-color:#0077CC;
+}
+
+/* Grey out dates in the future */
+div.datepicker td.datepickerFuture a {
+  color:#DDDDDD;
+}
+
+/* yellow cell background on hover */
+div.datepicker tbody.datepickerDays td:hover {
+  background-color: #FFCC33;
+}
+
+/* Bold today's date */
+div.datepicker td.datepickerToday a {
+  font-weight:bold;
+}
+
+/* cells are wider in the clean style */
+.datepickerYears a, .datepickerMonths a {
+  width: 42px;
+}
+.datepickerMonths td:first-child a,
+.datepickerYears td:first-child a {
+  width:39px;
+}
+div.datepicker th a.datepickerMonth {
+  width:121px;
+}
+
+
 body {
 	padding-top: 20px;
 	padding-left: 20px;
@@ -22,4 +280,707 @@ div.datepicker td.datepickerFuture a {
 
 .plupload_container {
   padding: 0px;
+}
+
+/*
+Version: 3.2 Timestamp: Mon Sep 10 10:38:04 PDT 2012
+*/
+.select2-container {
+    position: relative;
+    display: inline-block;
+    /* inline-block for ie7 */
+    zoom: 1;
+    *display: inline;
+    vertical-align: top;
+}
+
+.select2-container,
+.select2-drop,
+.select2-search,
+.select2-search input{
+  /*
+    Force border-box so that % widths fit the parent
+    container without overlap because of margin/padding.
+
+    More Info : http://www.quirksmode.org/css/box.html
+  */
+  -moz-box-sizing: border-box;    /* firefox */
+  -ms-box-sizing: border-box;     /* ie */
+  -webkit-box-sizing: border-box; /* webkit */
+  -khtml-box-sizing: border-box;  /* konqueror */
+  box-sizing: border-box;         /* css3 */
+}
+
+.select2-container .select2-choice {
+    background-color: #fff;
+    background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, #eeeeee), color-stop(0.5, white));
+    background-image: -webkit-linear-gradient(center bottom, #eeeeee 0%, white 50%);
+    background-image: -moz-linear-gradient(center bottom, #eeeeee 0%, white 50%);
+    background-image: -o-linear-gradient(bottom, #eeeeee 0%, #ffffff 50%);
+    background-image: -ms-linear-gradient(top, #eeeeee 0%, #ffffff 50%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr = '#eeeeee', endColorstr = '#ffffff', GradientType = 0);
+    background-image: linear-gradient(top, #eeeeee 0%, #ffffff 50%);
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    -moz-background-clip: padding;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    border: 1px solid #aaa;
+    display: block;
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+    height: 26px;
+    line-height: 26px;
+    padding: 0 0 0 8px;
+    color: #444;
+    text-decoration: none;
+}
+
+.select2-container.select2-drop-above .select2-choice
+{
+    border-bottom-color: #aaa;
+    -webkit-border-radius:0px 0px 4px 4px;
+    -moz-border-radius:0px 0px 4px 4px;
+    border-radius:0px 0px 4px 4px;
+    background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, #eeeeee), color-stop(0.9, white));
+    background-image: -webkit-linear-gradient(center bottom, #eeeeee 0%, white 90%);
+    background-image: -moz-linear-gradient(center bottom, #eeeeee 0%, white 90%);
+    background-image: -o-linear-gradient(bottom, #eeeeee 0%, white 90%);
+    background-image: -ms-linear-gradient(top, #eeeeee 0%,#ffffff 90%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', endColorstr='#ffffff',GradientType=0 );
+    background-image: linear-gradient(top, #eeeeee 0%,#ffffff 90%);
+}
+
+.select2-container .select2-choice span {
+    margin-right: 26px;
+    display: block;
+    overflow: hidden;
+    white-space: nowrap;
+    -o-text-overflow: ellipsis;
+    -ms-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+}
+
+.select2-container .select2-choice abbr {
+  display: block;
+  position: absolute;
+  right: 26px;
+  top: 8px;
+  width: 12px;
+  height: 12px;
+  font-size: 1px;
+  background: image-url('select2.png') right top no-repeat;
+  cursor: pointer;
+  text-decoration: none;
+  border:0;
+  outline: 0;
+}
+.select2-container .select2-choice abbr:hover {
+  background-position: right -11px;
+  cursor: pointer;
+}
+
+.select2-drop {
+    background: #fff;
+    color: #000;
+    border: 1px solid #aaa;
+    border-top: 0;
+    position: absolute;
+    top: 100%;
+    -webkit-box-shadow: 0 4px 5px rgba(0, 0, 0, .15);
+    -moz-box-shadow: 0 4px 5px rgba(0, 0, 0, .15);
+    -o-box-shadow: 0 4px 5px rgba(0, 0, 0, .15);
+    box-shadow: 0 4px 5px rgba(0, 0, 0, .15);
+    z-index: 9999;
+    width:100%;
+    margin-top:-1px;
+
+  -webkit-border-radius: 0 0 4px 4px;
+  -moz-border-radius: 0 0 4px 4px;
+  border-radius: 0 0 4px 4px;
+}
+
+.select2-drop.select2-drop-above {
+    -webkit-border-radius: 4px 4px 0px 0px;
+    -moz-border-radius: 4px 4px 0px 0px;
+    border-radius: 4px 4px 0px 0px;
+    margin-top:1px;
+    border-top: 1px solid #aaa;
+    border-bottom: 0;
+
+    -webkit-box-shadow: 0 -4px 5px rgba(0, 0, 0, .15);
+    -moz-box-shadow: 0 -4px 5px rgba(0, 0, 0, .15);
+    -o-box-shadow: 0 -4px 5px rgba(0, 0, 0, .15);
+    box-shadow: 0 -4px 5px rgba(0, 0, 0, .15);
+}
+
+.select2-container .select2-choice div {
+    -webkit-border-radius: 0 4px 4px 0;
+    -moz-border-radius: 0 4px 4px 0;
+    border-radius: 0 4px 4px 0;
+    -moz-background-clip: padding;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    background: #ccc;
+    background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, #ccc), color-stop(0.6, #eee));
+    background-image: -webkit-linear-gradient(center bottom, #ccc 0%, #eee 60%);
+    background-image: -moz-linear-gradient(center bottom, #ccc 0%, #eee 60%);
+    background-image: -o-linear-gradient(bottom, #ccc 0%, #eee 60%);
+    background-image: -ms-linear-gradient(top, #cccccc 0%, #eeeeee 60%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr = '#cccccc', endColorstr = '#eeeeee', GradientType = 0);
+    background-image: linear-gradient(top, #cccccc 0%, #eeeeee 60%);
+    border-left: 1px solid #aaa;
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: block;
+    height: 100%;
+    width: 18px;
+}
+
+.select2-container .select2-choice div b {
+    background: image-url('select2.png') no-repeat 0 1px;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.select2-search {
+  display: inline-block;
+    white-space: nowrap;
+    z-index: 10000;
+  min-height: 26px;
+  width: 100%;
+  margin: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+.select2-search-hidden {
+  display: block;
+  position: absolute;
+  left: -10000px;
+}
+
+.select2-search input {
+    background: #fff image-url('select2.png') no-repeat 100% -22px;
+    background: image-url('select2.png') no-repeat 100% -22px, -webkit-gradient(linear, left bottom, left top, color-stop(0.85, white), color-stop(0.99, #eeeeee));
+    background: image-url('select2.png') no-repeat 100% -22px, -webkit-linear-gradient(center bottom, white 85%, #eeeeee 99%);
+    background: image-url('select2.png') no-repeat 100% -22px, -moz-linear-gradient(center bottom, white 85%, #eeeeee 99%);
+    background: image-url('select2.png') no-repeat 100% -22px, -o-linear-gradient(bottom, white 85%, #eeeeee 99%);
+    background: image-url('select2.png') no-repeat 100% -22px, -ms-linear-gradient(top, #ffffff 85%, #eeeeee 99%);
+    background: image-url('select2.png') no-repeat 100% -22px, linear-gradient(top, #ffffff 85%, #eeeeee 99%);
+    padding: 4px 20px 4px 5px;
+    outline: 0;
+    border: 1px solid #aaa;
+    font-family: sans-serif;
+    font-size: 1em;
+    width:100%;
+    margin:0;
+    height:auto !important;
+    min-height: 26px;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    border-radius: 0;
+    -moz-border-radius: 0;
+    -webkit-border-radius: 0;
+}
+
+.select2-drop.select2-drop-above .select2-search input
+{
+    margin-top:4px;
+}
+
+.select2-search input.select2-active {
+    background: #fff image-url('spinner.gif') no-repeat 100%;
+    background: image-url('spinner.gif') no-repeat 100%, -webkit-gradient(linear, left bottom, left top, color-stop(0.85, white), color-stop(0.99, #eeeeee));
+    background: image-url('spinner.gif') no-repeat 100%, -webkit-linear-gradient(center bottom, white 85%, #eeeeee 99%);
+    background: image-url('spinner.gif') no-repeat 100%, -moz-linear-gradient(center bottom, white 85%, #eeeeee 99%);
+    background: image-url('spinner.gif') no-repeat 100%, -o-linear-gradient(bottom, white 85%, #eeeeee 99%);
+    background: image-url('spinner.gif') no-repeat 100%, -ms-linear-gradient(top, #ffffff 85%, #eeeeee 99%);
+    background: image-url('spinner.gif') no-repeat 100%, linear-gradient(top, #ffffff 85%, #eeeeee 99%);
+}
+
+
+.select2-container-active .select2-choice,
+.select2-container-active .select2-choices {
+    -webkit-box-shadow: 0 0 5px rgba(0,0,0,.3);
+    -moz-box-shadow   : 0 0 5px rgba(0,0,0,.3);
+    -o-box-shadow     : 0 0 5px rgba(0,0,0,.3);
+    box-shadow        : 0 0 5px rgba(0,0,0,.3);
+    border: 1px solid #5897fb;
+    outline: none;
+}
+
+.select2-dropdown-open .select2-choice {
+  border: 1px solid #aaa;
+  border-bottom-color: transparent;
+  -webkit-box-shadow: 0 1px 0 #fff inset;
+  -moz-box-shadow   : 0 1px 0 #fff inset;
+  -o-box-shadow     : 0 1px 0 #fff inset;
+  box-shadow        : 0 1px 0 #fff inset;
+  background-color: #eee;
+  background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, white), color-stop(0.5, #eeeeee));
+  background-image: -webkit-linear-gradient(center bottom, white 0%, #eeeeee 50%);
+  background-image: -moz-linear-gradient(center bottom, white 0%, #eeeeee 50%);
+  background-image: -o-linear-gradient(bottom, white 0%, #eeeeee 50%);
+  background-image: -ms-linear-gradient(top, #ffffff 0%,#eeeeee 50%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#eeeeee',GradientType=0 );
+  background-image: linear-gradient(top, #ffffff 0%,#eeeeee 50%);
+  -webkit-border-bottom-left-radius : 0;
+  -webkit-border-bottom-right-radius: 0;
+  -moz-border-radius-bottomleft : 0;
+  -moz-border-radius-bottomright: 0;
+  border-bottom-left-radius : 0;
+  border-bottom-right-radius: 0;
+}
+
+.select2-dropdown-open .select2-choice div {
+  background: transparent;
+  border-left: none;
+}
+.select2-dropdown-open .select2-choice div b {
+  background-position: -18px 1px;
+}
+
+/* results */
+.select2-results {
+  margin: 4px 4px 4px 0;
+  padding: 0 0 0 4px;
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: auto;
+  max-height: 200px;
+}
+
+.select2-results ul.select2-result-sub {
+  margin: 0 0 0 0;
+}
+
+.select2-results ul.select2-result-sub > li .select2-result-label { padding-left: 20px }
+.select2-results ul.select2-result-sub ul.select2-result-sub > li .select2-result-label { padding-left: 40px }
+.select2-results ul.select2-result-sub ul.select2-result-sub ul.select2-result-sub > li .select2-result-label { padding-left: 60px }
+.select2-results ul.select2-result-sub ul.select2-result-sub ul.select2-result-sub ul.select2-result-sub > li .select2-result-label { padding-left: 80px }
+.select2-results ul.select2-result-sub ul.select2-result-sub ul.select2-result-sub ul.select2-result-sub ul.select2-result-sub > li .select2-result-label { padding-left: 100px }
+.select2-results ul.select2-result-sub ul.select2-result-sub ul.select2-result-sub ul.select2-result-sub ul.select2-result-sub ul.select2-result-sub > li .select2-result-label { padding-left: 110px }
+.select2-results ul.select2-result-sub ul.select2-result-sub ul.select2-result-sub ul.select2-result-sub ul.select2-result-sub ul.select2-result-sub ul.select2-result-sub > li .select2-result-label { padding-left: 120px }
+
+.select2-results li {
+  list-style: none;
+  display: list-item;
+}
+
+.select2-results li.select2-result-with-children > .select2-result-label {
+  font-weight: bold;
+}
+
+.select2-results .select2-result-label {
+  padding: 3px 7px 4px;
+  margin: 0;
+  cursor: pointer;
+}
+
+.select2-results .select2-highlighted {
+  background: #3875d7;
+  color: #fff;
+}
+.select2-results li em {
+  background: #feffde;
+  font-style: normal;
+}
+.select2-results .select2-highlighted em {
+  background: transparent;
+}
+.select2-results .select2-no-results,
+.select2-results .select2-searching,
+.select2-results .select2-selection-limit {
+  background: #f4f4f4;
+  display: list-item;
+}
+
+/*
+disabled look for already selected choices in the results dropdown
+.select2-results .select2-disabled.select2-highlighted {
+    color: #666;
+    background: #f4f4f4;
+    display: list-item;
+    cursor: default;
+}
+.select2-results .select2-disabled {
+  background: #f4f4f4;
+  display: list-item;
+  cursor: default;
+}
+*/
+.select2-results .select2-disabled {
+    display: none;
+}
+
+.select2-more-results.select2-active {
+    background: #f4f4f4 image-url('spinner.gif') no-repeat 100%;
+}
+
+.select2-more-results {
+  background: #f4f4f4;
+  display: list-item;
+}
+
+/* disabled styles */
+
+.select2-container.select2-container-disabled .select2-choice {
+    background-color: #f4f4f4;
+    background-image: none;
+    border: 1px solid #ddd;
+    cursor: default;
+}
+
+.select2-container.select2-container-disabled .select2-choice div {
+    background-color: #f4f4f4;
+    background-image: none;
+    border-left: 0;
+}
+
+
+/* multiselect */
+
+.select2-container-multi .select2-choices {
+    background-color: #fff;
+      background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(1%, #eeeeee), color-stop(15%, #ffffff));
+      background-image: -webkit-linear-gradient(top, #eeeeee 1%, #ffffff 15%);
+      background-image: -moz-linear-gradient(top, #eeeeee 1%, #ffffff 15%);
+      background-image: -o-linear-gradient(top, #eeeeee 1%, #ffffff 15%);
+      background-image: -ms-linear-gradient(top, #eeeeee 1%, #ffffff 15%);
+      background-image: linear-gradient(top, #eeeeee 1%, #ffffff 15%);
+      border: 1px solid #aaa;
+      margin: 0;
+      padding: 0;
+      cursor: text;
+      overflow: hidden;
+      height: auto !important;
+      height: 1%;
+      position: relative;
+}
+
+.select2-container-multi .select2-choices {
+    min-height: 26px;
+}
+
+.select2-container-multi.select2-container-active .select2-choices {
+    -webkit-box-shadow: 0 0 5px rgba(0,0,0,.3);
+    -moz-box-shadow   : 0 0 5px rgba(0,0,0,.3);
+    -o-box-shadow     : 0 0 5px rgba(0,0,0,.3);
+    box-shadow        : 0 0 5px rgba(0,0,0,.3);
+    border: 1px solid #5897fb;
+    outline: none;
+}
+.select2-container-multi .select2-choices li {
+  float: left;
+  list-style: none;
+}
+.select2-container-multi .select2-choices .select2-search-field {
+  white-space: nowrap;
+  margin: 0;
+  padding: 0;
+}
+
+.select2-container-multi .select2-choices .select2-search-field input {
+  color: #666;
+  background: transparent !important;
+  font-family: sans-serif;
+  font-size: 100%;
+  height: 15px;
+  padding: 5px;
+  margin: 1px 0;
+  outline: 0;
+  border: 0;
+  -webkit-box-shadow: none;
+  -moz-box-shadow   : none;
+  -o-box-shadow     : none;
+  box-shadow        : none;
+}
+
+.select2-container-multi .select2-choices .select2-search-field input.select2-active {
+    background: #fff image-url('spinner.gif') no-repeat 100% !important;
+}
+
+.select2-default {
+  color: #999 !important;
+}
+
+.select2-container-multi .select2-choices .select2-search-choice {
+  -webkit-border-radius: 3px;
+  -moz-border-radius   : 3px;
+  border-radius        : 3px;
+  -moz-background-clip   : padding;
+  -webkit-background-clip: padding-box;
+  background-clip        : padding-box;
+  background-color: #e4e4e4;
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f4f4f4', endColorstr='#eeeeee', GradientType=0 );
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(20%, #f4f4f4), color-stop(50%, #f0f0f0), color-stop(52%, #e8e8e8), color-stop(100%, #eeeeee));
+  background-image: -webkit-linear-gradient(top, #f4f4f4 20%, #f0f0f0 50%, #e8e8e8 52%, #eeeeee 100%);
+  background-image: -moz-linear-gradient(top, #f4f4f4 20%, #f0f0f0 50%, #e8e8e8 52%, #eeeeee 100%);
+  background-image: -o-linear-gradient(top, #f4f4f4 20%, #f0f0f0 50%, #e8e8e8 52%, #eeeeee 100%);
+  background-image: -ms-linear-gradient(top, #f4f4f4 20%, #f0f0f0 50%, #e8e8e8 52%, #eeeeee 100%);
+  background-image: linear-gradient(top, #f4f4f4 20%, #f0f0f0 50%, #e8e8e8 52%, #eeeeee 100%);
+  -webkit-box-shadow: 0 0 2px #ffffff inset, 0 1px 0 rgba(0,0,0,0.05);
+  -moz-box-shadow   : 0 0 2px #ffffff inset, 0 1px 0 rgba(0,0,0,0.05);
+  box-shadow        : 0 0 2px #ffffff inset, 0 1px 0 rgba(0,0,0,0.05);
+  color: #333;
+  border: 1px solid #aaaaaa;
+  line-height: 13px;
+  padding: 3px 5px 3px 18px;
+  margin: 3px 0 3px 5px;
+  position: relative;
+  cursor: default;
+}
+.select2-container-multi .select2-choices .select2-search-choice span {
+  cursor: default;
+}
+.select2-container-multi .select2-choices .select2-search-choice-focus {
+  background: #d4d4d4;
+}
+
+.select2-search-choice-close {
+  display: block;
+  position: absolute;
+  right: 3px;
+  top: 4px;
+  width: 12px;
+  height: 13px;
+  font-size: 1px;
+  background: image-url('select2.png') right top no-repeat;
+  outline: none;
+}
+
+.select2-container-multi .select2-search-choice-close {
+  left: 3px;
+}
+
+
+.select2-container-multi .select2-choices .select2-search-choice .select2-search-choice-close:hover {
+  background-position: right -11px;
+}
+.select2-container-multi .select2-choices .select2-search-choice-focus .select2-search-choice-close {
+  background-position: right -11px;
+}
+
+/* disabled styles */
+
+.select2-container-multi.select2-container-disabled .select2-choices{
+    background-color: #f4f4f4;
+    background-image: none;
+    border: 1px solid #ddd;
+    cursor: default;
+}
+
+.select2-container-multi.select2-container-disabled .select2-choices .select2-search-choice {
+    background-image: none;
+    background-color: #f4f4f4;
+    border: 1px solid #ddd;
+    padding: 3px 5px 3px 5px;
+}
+
+.select2-container-multi.select2-container-disabled .select2-choices .select2-search-choice .select2-search-choice-close {
+    display: none;
+}
+/* end multiselect */
+
+.select2-result-selectable .select2-match,
+.select2-result-unselectable .select2-result-selectable .select2-match { text-decoration: underline; }
+.select2-result-unselectable .select2-match { text-decoration: none; }
+
+.select2-offscreen { position: absolute; left: -10000px; }
+
+/* Retina-ize icons */
+
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5) {
+  .select2-search input, .select2-search-choice-close, .select2-container .select2-choice abbr, .select2-container .select2-choice div b {
+    background-image: image-url('select2x2.png') !important;
+    background-repeat: no-repeat !important;
+    background-size: 60px 40px !important;
+  }
+  .select2-search input {
+    background-position: 100% -21px !important;
+  }
+}
+
+/*
+   Plupload
+------------------------------------------------------------------- */
+
+.plupload_button {
+  display: -moz-inline-box; /* FF < 3*/
+  display: inline-block;
+  font: normal 12px sans-serif;
+  text-decoration: none;
+    color: #42454a;
+    border: 1px solid #bababa;
+    padding: 2px 8px 3px 20px;
+  margin-right: 4px;
+    background: #f3f3f3 url('jquery.plupload.queue/buttons.png') no-repeat 0 center;
+  outline: 0;
+
+    /* Optional rounded corners for browsers that support it */
+    -moz-border-radius: 3px;
+    -khtml-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+}
+
+.plupload_button:hover {
+  color: #000;
+  text-decoration: none;
+}
+
+.plupload_disabled, a.plupload_disabled:hover {
+    color: #737373;
+    border-color: #c5c5c5;
+    background: #ededed url('jquery.plupload.queue/buttons-disabled.png') no-repeat 0 center;
+  cursor: default;
+}
+
+.plupload_add {
+  background-position: -181px center;
+}
+
+.plupload_wrapper {
+  font: normal 11px Verdana,sans-serif;
+  width: 100%;
+}
+
+.plupload_container {
+  padding: 8px;
+  background: url('jquery.plupload.queue/transp50.png');
+  /*-moz-border-radius: 5px;*/
+}
+
+.plupload_container input {
+  border: 1px solid #DDD;
+  font: normal 11px Verdana,sans-serif;
+  width: 98%;
+}
+
+.plupload_header {background: #2A2C2E url('jquery.plupload.queue/backgrounds.gif') repeat-x;}
+.plupload_header_content {
+  background: url('jquery.plupload.queue/backgrounds.gif') no-repeat 0 -317px;
+  min-height: 56px;
+  padding-left: 60px;
+  color: #FFF;
+}
+.plupload_header_title {
+  font: normal 18px sans-serif;
+  padding: 6px 0 3px;
+}
+.plupload_header_text {
+  font: normal 12px sans-serif;
+}
+
+.plupload_filelist {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.plupload_scroll .plupload_filelist {
+  height: 185px;
+  background: #F5F5F5;
+  overflow-y: scroll;
+}
+
+.plupload_filelist li {
+  padding: 10px 8px;
+  background: #F5F5F5 url('jquery.plupload.queue/backgrounds.gif') repeat-x 0 -156px;
+  border-bottom: 1px solid #DDD;
+}
+
+.plupload_filelist_header, .plupload_filelist_footer {
+  background: #DFDFDF;
+  padding: 8px 8px;
+  color: #42454A;
+}
+.plupload_filelist_header {
+  border-top: 1px solid #EEE;
+  border-bottom: 1px solid #CDCDCD;
+}
+
+.plupload_filelist_footer {border-top: 1px solid #FFF; height: 22px; line-height: 20px; vertical-align: middle;}
+.plupload_file_name {float: left; overflow: hidden}
+.plupload_file_status {color: #777;}
+.plupload_file_status span {color: #42454A;}
+.plupload_file_size, .plupload_file_status, .plupload_progress {
+  float: right;
+  width: 80px;
+}
+.plupload_file_size, .plupload_file_status, .plupload_file_action {text-align: right;}
+
+.plupload_filelist .plupload_file_name {width: 205px}
+
+.plupload_file_action {
+  float: right;
+  width: 16px;
+  height: 16px;
+  margin-left: 15px;
+}
+
+.plupload_file_action * {
+  display: none;
+  width: 16px;
+  height: 16px;
+}
+
+li.plupload_uploading {background: #ECF3DC url('jquery.plupload.queue/backgrounds.gif') repeat-x 0 -238px;}
+li.plupload_done {color:#AAA}
+
+li.plupload_delete a {
+  background: url('jquery.plupload.queue/delete.gif');
+}
+
+li.plupload_failed a {
+  background: url('jquery.plupload.queue/error.gif');
+  cursor: default;
+}
+
+li.plupload_done a {
+  background: url('jquery.plupload.queue/done.gif');
+  cursor: default;
+}
+
+.plupload_progress, .plupload_upload_status {
+  display: none;
+}
+
+.plupload_progress_container {
+  margin-top: 3px;
+  border: 1px solid #CCC;
+  background: #FFF;
+  padding: 1px;
+}
+.plupload_progress_bar {
+  width: 0px;
+  height: 7px;
+  background: #CDEB8B;
+}
+
+.plupload_scroll .plupload_filelist_header .plupload_file_action, .plupload_scroll .plupload_filelist_footer .plupload_file_action {
+  margin-right: 17px;
+}
+
+/* Floats */
+
+.plupload_clear,.plupload_clearer {clear: both;}
+.plupload_clearer, .plupload_progress_bar {
+  display: block;
+  font-size: 0;
+  line-height: 0;
+}
+
+li.plupload_droptext {
+  background: transparent;
+  text-align: center;
+  vertical-align: middle;
+  border: 0;
+  line-height: 165px;
 }

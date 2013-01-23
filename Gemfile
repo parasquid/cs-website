@@ -74,4 +74,4 @@ group :assets do
   gem 'uglifier'
 end
 
-
+gem 'cloud_spokes_api_model', '~> 0.1'
